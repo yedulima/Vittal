@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import AuthLoading from "../pages/auth/AuthLoading";
 import WelcomePage from "../pages/welcome_page";
-import Login from "../pages/login/Login";
+import Login from "../pages/login";
 import BottomRoutes from "./bottom.routes";
 import WecomePageRoutes from "./welcome_page.routes";
 

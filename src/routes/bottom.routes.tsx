@@ -1,12 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Home from "../pages/home/Home";
-import Contatcs from "../pages/contacts/Contatcs";
-import Notifications from "../pages/notifications/Notifications";
-import Configurations from "../pages/configurations/Configurations";
+import Home from "../pages/home";
+import Contatcs from "../pages/contacts";
+import Notifications from "../pages/notifications";
+import Configurations from "../pages/configurations";
 
-import CustomTabBar from "../components/CustomTabBar/CustomTabBar";
+import CustomTabBar from "../components/CustomTabBar";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,9 +25,45 @@ export default function BottomRoutes() {
 			tabBar={(props) => <CustomTabBar {...props} />}
 		>
 			<Tab.Screen name="Home" component={Home} />
-			<Tab.Screen name="People" component={Contatcs} />
-			<Tab.Screen name="Notifications" component={Notifications} />
-			<Tab.Screen name="Configurations" component={Configurations} />
+			<Tab.Screen
+				name="Contacts"
+				component={Contatcs}
+				options={{
+					headerShown: true,
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: "#fff",
+						elevation: 0,
+					},
+					headerTitle: "Contatos",
+				}}
+			/>
+			<Tab.Screen
+				name="Notifications"
+				component={Notifications}
+				options={{
+					headerShown: true,
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: "#fff",
+						elevation: 0,
+					},
+					headerTitle: "Notificações",
+				}}
+			/>
+			<Tab.Screen
+				name="Configurations"
+				component={Configurations}
+				options={{
+					headerShown: true,
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: "#fff",
+						elevation: 0,
+					},
+					headerTitle: "Configurações",
+				}}
+			/>
 		</Tab.Navigator>
 	);
 }

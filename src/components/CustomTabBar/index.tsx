@@ -1,7 +1,7 @@
 import React from "react";
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
 
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { style } from "./styles";
 
@@ -26,7 +26,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={style.tabItem}
-				onPress={() => navigateTo("People")}
+				onPress={() => navigateTo("Contacts")}
 			>
 				<Octicons
 					name="people"
