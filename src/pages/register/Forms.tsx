@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { Octicons } from "@expo/vector-icons";
 
-import { View, Text, Alert, Dimensions } from "react-native";
+import { View, Alert, Dimensions } from "react-native";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+
+import { signUp } from "../../services/Auth.service";
+
 import { style } from "./styles";
 
 export function IdosoForm() {
@@ -11,10 +17,15 @@ export function IdosoForm() {
 	const [password, setPassword] = useState<string>("");
 	const [passwordConfirmation, setPasswordConfirmation] =
 		useState<string>("");
+	const [showPassword, setShowPassword] = useState<boolean>(false);
+	const [showPasswordConfirmation, setShowPasswordConfirmation] =
+		useState<boolean>(false);
 	const [age, setAge] = useState<string>("");
 	const [phoneNumber, setPhoneNumber] = useState<string>("");
 
 	const [loading, setLoading] = useState<boolean>(false);
+
+	const navigation = useNavigation<NavigationProp<any>>();
 
 	async function handleRegister() {
 		setLoading(true);
@@ -25,13 +36,36 @@ export function IdosoForm() {
 					"Preencha todos os campos para efetuar o cadastro."
 				);
 			}
-			console.log("Registrado!");
-		} catch (err) {
-			console.error(err);
-			Alert.alert(
-				"Cadastro não bem sucedido!",
-				"O cadastro não pode ser efetuado."
-			);
+
+			if (password !== passwordConfirmation) {
+				return Alert.alert(
+					"Confirmação de senha incorreta!",
+					"Incoerência nas senhas."
+				);
+			}
+
+			await signUp(email, password, name, phoneNumber, "idoso", age);
+			navigation.reset({
+				index: 0,
+				routes: [{ name: "BottomRoutes" }],
+			});
+		} catch (err: any) {
+			const errorCode = err.code;
+
+			switch (errorCode) {
+				case "auth/email-already-in-use":
+					Alert.alert(
+						"E-mail já está em uso!",
+						"O e-mail inserido já está em uso."
+					);
+					break;
+				case "auth/invalid-email":
+					Alert.alert(
+						"E-mail inválido!",
+						"O e-mail inserido é inválido."
+					);
+					break;
+			}
 		} finally {
 			setLoading(false);
 		}
@@ -63,12 +97,28 @@ export function IdosoForm() {
 						onChangeText={setPassword}
 						title="Senha"
 						placeholder="Crie uma senha"
+						IconRight={Octicons}
+						iconRightName={showPassword ? "eye" : "eye-closed"}
+						onIconRightPress={() => setShowPassword(!showPassword)}
+						secureTextEntry={showPassword ? false : true}
 					/>
 					<Input
 						value={passwordConfirmation}
 						onChangeText={setPasswordConfirmation}
 						title="Confirme sua senha"
 						placeholder="Insira a sua senha novamente"
+						IconRight={Octicons}
+						iconRightName={
+							showPasswordConfirmation ? "eye" : "eye-closed"
+						}
+						onIconRightPress={() =>
+							setShowPasswordConfirmation(
+								!showPasswordConfirmation
+							)
+						}
+						secureTextEntry={
+							showPasswordConfirmation ? false : true
+						}
 					/>
 					<Input
 						value={age}
@@ -103,9 +153,14 @@ export function CuidadorForm() {
 	const [password, setPassword] = useState<string>("");
 	const [passwordConfirmation, setPasswordConfirmation] =
 		useState<string>("");
+	const [showPassword, setShowPassword] = useState<boolean>(false);
+	const [showPasswordConfirmation, setShowPasswordConfirmation] =
+		useState<boolean>(false);
 	const [phoneNumber, setPhoneNumber] = useState<string>("");
 
 	const [loading, setLoading] = useState<boolean>(false);
+
+	const navigation = useNavigation<NavigationProp<any>>();
 
 	async function handleRegister() {
 		setLoading(true);
@@ -116,13 +171,35 @@ export function CuidadorForm() {
 					"Preencha todos os campos para efetuar o cadastro."
 				);
 			}
-			console.log("Registrado!");
-		} catch (err) {
-			console.error(err);
-			Alert.alert(
-				"Cadastro não bem sucedido!",
-				"O cadastro não pode ser efetuado."
-			);
+			if (password !== passwordConfirmation) {
+				return Alert.alert(
+					"Confirmação de senha incorreta!",
+					"Incoerência nas senhas."
+				);
+			}
+
+			await signUp(email, password, name, phoneNumber, "cuidador");
+			navigation.reset({
+				index: 0,
+				routes: [{ name: "BottomRoutes" }],
+			});
+		} catch (err: any) {
+			const errorCode = err.code;
+
+			switch (errorCode) {
+				case "auth/email-already-in-use":
+					Alert.alert(
+						"E-mail já está em uso!",
+						"O e-mail inserido já está em uso."
+					);
+					break;
+				case "auth/invalid-email":
+					Alert.alert(
+						"E-mail inválido!",
+						"O e-mail inserido é inválido."
+					);
+					break;
+			}
 		} finally {
 			setLoading(false);
 		}
@@ -154,12 +231,28 @@ export function CuidadorForm() {
 						onChangeText={setPassword}
 						title="Senha"
 						placeholder="Crie uma senha"
+						IconRight={Octicons}
+						iconRightName={showPassword ? "eye" : "eye-closed"}
+						onIconRightPress={() => setShowPassword(!showPassword)}
+						secureTextEntry={showPassword ? false : true}
 					/>
 					<Input
 						value={passwordConfirmation}
 						onChangeText={setPasswordConfirmation}
 						title="Confirme sua senha"
 						placeholder="Insira a sua senha novamente"
+						IconRight={Octicons}
+						iconRightName={
+							showPasswordConfirmation ? "eye" : "eye-closed"
+						}
+						onIconRightPress={() =>
+							setShowPasswordConfirmation(
+								!showPasswordConfirmation
+							)
+						}
+						secureTextEntry={
+							showPasswordConfirmation ? false : true
+						}
 					/>
 					<Input
 						value={phoneNumber}

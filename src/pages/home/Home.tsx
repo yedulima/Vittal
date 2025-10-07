@@ -17,7 +17,7 @@ export default function Home() {
 					FIREBASE_AUTH.signOut();
 					navigation.reset({
 						index: 0,
-						routes: [{ name: "LoginRoutes" }],
+						routes: [{ name: "WelcomePageRoutes" }],
 					});
 				}}
 				title="Logout"

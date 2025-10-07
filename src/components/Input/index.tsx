@@ -51,11 +51,8 @@ export const Input = forwardRef((Props: Props, ref) => {
 	const calculatePaddingLeft = () => {
 		if (IconLeft && IconRight) {
 			return 0;
-		} else if (IconLeft || IconRight) {
-			return 10;
-		} else {
-			return 15;
 		}
+		return 15;
 	};
 
 	return (
