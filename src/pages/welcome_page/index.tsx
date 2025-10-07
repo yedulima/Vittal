@@ -29,7 +29,7 @@ export default function WelcomePage() {
 					buttonColor="#38E07B"
 					textColor="#000"
 					width={310}
-					onPress={() => navigation.navigate("LoginRoutes")}
+					onPress={() => navigation.navigate("Login")}
 				/>
 				<Button
 					text="Cadastre-se"

@@ -3,8 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import AuthLoading from "../pages/auth/AuthLoading";
 import WelcomePage from "../pages/welcome_page";
+import Login from "../pages/login/Login";
 import BottomRoutes from "./bottom.routes";
-import LoginRoutes from "./login.routes";
 
 const Stack = createStackNavigator();
 
@@ -32,9 +32,17 @@ export default function Routes() {
 				options={{ headerShown: false }}
 			/>
 			<Stack.Screen
-				name="LoginRoutes"
-				component={LoginRoutes}
-				options={{ headerShown: false }}
+				name="Login"
+				component={Login}
+				options={{
+					headerShown: true,
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: "transparent",
+						elevation: 0,
+						shadowOpacity: 0,
+					},
+				}}
 			/>
 			<Stack.Screen
 				name="BottomRoutes"
