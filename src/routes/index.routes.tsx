@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import AuthLoading from "../pages/auth/AuthLoading";
+import WelcomePage from "../pages/welcome_page";
 import BottomRoutes from "./bottom.routes";
 import LoginRoutes from "./login.routes";
 
@@ -23,6 +24,11 @@ export default function Routes() {
 			<Stack.Screen
 				name="AuthLoading"
 				component={AuthLoading}
+				options={{ headerShown: false }}
+			/>
+			<Stack.Screen
+				name="WelcomePage"
+				component={WelcomePage}
 				options={{ headerShown: false }}
 			/>
 			<Stack.Screen

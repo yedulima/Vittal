@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
 
-import { Text, View, Image, Alert } from "react-native";
-import { Input } from "../../../components/Input";
-import { Button } from "../../../components/Button";
-import { RedirectLink } from "../../../components/RedirectLink";
+import { Text, View, Alert } from "react-native";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
+import { RedirectLink } from "../../components/RedirectLink";
 
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 
-import { login } from "../../../services/Auth.service";
+import { login } from "../../services/Auth.service";
 
-import { style } from "../styles";
-import Logo from "../../../assets/Logo.png";
+import { style } from "./styles";
 
-export default function LoginByEmail() {
+export default function Login() {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -51,15 +50,11 @@ export default function LoginByEmail() {
 	return (
 		<View style={style.container}>
 			<View style={style.boxTop}>
-				<Image source={Logo} width={1000} height={1000} />
 				<View
-					style={{ justifyContent: "center", alignItems: "center" }}
+					style={{ justifyContent: "flex-end", alignItems: "center" }}
 				>
 					<Text style={style.welcomeMessage}>
 						Bem vindo de volta!
-					</Text>
-					<Text style={style.subWelcomeMessage}>
-						Realize o login para entrar no sistema.
 					</Text>
 				</View>
 			</View>
@@ -80,23 +75,24 @@ export default function LoginByEmail() {
 					onIconRightPress={() => setShowPassword(!showPassword)}
 					secureTextEntry={showPassword ? false : true}
 				/>
-				<View style={{ gap: 2 }}>
-					<RedirectLink
-						text="Realizar login com telefone"
-						to="LoginByPhone"
-					/>
+			</View>
+			<View style={style.boxBottom}>
+				<Button
+					text="Entrar"
+					loading={loading}
+					width={"100%"}
+					onPress={handleLogin}
+				/>
+				<View>
 					<RedirectLink
 						text="Esqueci minha senha"
 						to="esqueciSenha"
 					/>
 				</View>
 			</View>
-			<View style={style.boxBottom}>
-				<Button text="Entrar" loading={loading} onPress={handleLogin} />
-			</View>
-			<Text>
+			<Text style={{ color: "#9c9c9cff" }}>
 				Não possui uma conta?{" "}
-				<Text style={{ color: "#3ABBBF" }}>Crie uma agora!</Text>
+				<Text style={{ color: "#5685EE" }}>Crie uma agora!</Text>
 			</Text>
 		</View>
 	);

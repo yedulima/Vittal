@@ -3,24 +3,24 @@ import { themes } from "../../global/themes";
 
 export const style = StyleSheet.create({
 	button: {
-		width: 250,
-		height: 40,
+		width: 260,
+		height: 55,
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "#4ED347",
-		borderRadius: 25,
-		shadowColor: "#000",
-		shadowOffset: {
-			width: 0,
-			height: 8,
-		},
-		shadowOpacity: 0.44,
-		shadowRadius: 10.32,
+		backgroundColor: "#38E07B",
+		borderRadius: 10,
+		// shadowColor: "#000",
+		// shadowOffset: {
+		// 	width: 0,
+		// 	height: 8,
+		// },
+		// shadowOpacity: 0.44,
+		// shadowRadius: 10.32,
 
-		elevation: 16,
+		// elevation: 16,
 	},
 	textButton: {
-		color: "#ffffff",
+		color: "#000",
 		fontWeight: "bold",
 		fontSize: 17,
 	},

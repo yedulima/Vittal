@@ -5,6 +5,10 @@ import {
 	TouchableOpacity,
 	ActivityIndicator,
 	Text,
+	StyleProp,
+	ViewStyle,
+	TextStyle,
+	DimensionValue,
 } from "react-native";
 
 import { style } from "./styles";
@@ -12,15 +16,39 @@ import { style } from "./styles";
 type Props = TouchableOpacityProps & {
 	text: string;
 	loading?: boolean;
+	buttonColor?: string;
+	textColor?: string;
+	width?: DimensionValue;
+	height?: DimensionValue;
 };
 
-export function Button({ ...rest }: Props) {
+export function Button({
+	text,
+	loading,
+	buttonColor,
+	textColor,
+	width,
+	height,
+	...rest
+}: Props) {
+	const buttonStyles: StyleProp<ViewStyle> = [
+		style.button,
+		buttonColor && { backgroundColor: buttonColor },
+		width != null && { width: width },
+		height != null && { height: height },
+	];
+
+	const textStyles: StyleProp<TextStyle> = [
+		style.textButton,
+		textColor && { color: textColor },
+	];
+
 	return (
-		<TouchableOpacity style={style.button} {...rest} activeOpacity={0.6}>
-			{rest.loading ? (
+		<TouchableOpacity style={buttonStyles} {...rest} activeOpacity={0.6}>
+			{loading ? (
 				<ActivityIndicator color={"#ffffff"} size={"small"} />
 			) : (
-				<Text style={style.textButton}>{rest.text}</Text>
+				<Text style={textStyles}>{text}</Text>
 			)}
 		</TouchableOpacity>
 	);
