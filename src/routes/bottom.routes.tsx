@@ -36,6 +36,7 @@ export default function BottomRoutes() {
 						elevation: 0,
 					},
 					headerTitle: "Contatos",
+					headerTintColor: "#686868ff",
 				}}
 			/>
 			<Tab.Screen
@@ -49,6 +50,7 @@ export default function BottomRoutes() {
 						elevation: 0,
 					},
 					headerTitle: "Notificações",
+					headerTintColor: "#686868ff",
 				}}
 			/>
 			<Tab.Screen
@@ -62,6 +64,7 @@ export default function BottomRoutes() {
 						elevation: 0,
 					},
 					headerTitle: "Configurações",
+					headerTintColor: "#686868ff",
 				}}
 			/>
 		</Tab.Navigator>

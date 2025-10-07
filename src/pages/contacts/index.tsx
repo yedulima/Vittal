@@ -1,12 +1,52 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
+import { View, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+import Contact from "../../components/Contact";
 
 import { style } from "./styles";
 
 export default function Contatcs() {
-    return (
-        <View style={style.container}>
-            <Text>Contatcs</Text>
-        </View>
-    );
+	const insets = useSafeAreaInsets();
+
+	return (
+		<ScrollView
+			style={style.container}
+			contentContainerStyle={{
+				alignItems: "center",
+				paddingBottom: insets.bottom + 20,
+				gap: 15,
+			}}
+		>
+			<View style={style.searchBar}>
+				<MaterialIcons
+					name="search"
+					style={{
+						fontSize: 20,
+						color: "#7c7c7cff",
+					}}
+				/>
+				<TextInput
+					style={style.searchInput}
+					placeholder="Pesquisar contato"
+				/>
+			</View>
+			<View>
+				<Contact name={"Eduardo"} status={"Ativo"} />
+				<Contact name={"Levi"} status={"SOS"} />
+				<Contact name={"Júlio"} status={"Ativo"} />
+				<Contact name={"Kairo"} status={"Pendente"} />
+				<Contact name={"Raphael"} status={"Ativo"} />
+				<Contact name={"Vitor"} status={"SOS"} />
+			</View>
+			<TouchableOpacity style={style.addButton}>
+				<MaterialIcons
+					name="add"
+					style={{ fontSize: 30, color: "#fff" }}
+				/>
+			</TouchableOpacity>
+		</ScrollView>
+	);
 }
