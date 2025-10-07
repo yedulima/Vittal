@@ -20,7 +20,7 @@ export const style = StyleSheet.create({
 		// elevation: 16,
 	},
 	textButton: {
-		color: "#000",
+		color: "#fff",
 		fontWeight: "bold",
 		fontSize: 17,
 	},

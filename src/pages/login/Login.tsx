@@ -61,27 +61,21 @@ export default function Login() {
 			<View style={style.boxMid}>
 				<Input
 					value={email}
-					title="E-mail:"
+					title="E-mail"
 					onChangeText={setEmail}
 					IconRight={MaterialIcons}
 					iconRightName="email"
+					placeholder="Insira seu e-mail"
 				/>
 				<Input
 					value={password}
-					title="Senha:"
+					title="Senha"
 					onChangeText={setPassword}
 					IconRight={Octicons}
 					iconRightName={showPassword ? "eye" : "eye-closed"}
 					onIconRightPress={() => setShowPassword(!showPassword)}
 					secureTextEntry={showPassword ? false : true}
-				/>
-			</View>
-			<View style={style.boxBottom}>
-				<Button
-					text="Entrar"
-					loading={loading}
-					width={"100%"}
-					onPress={handleLogin}
+					placeholder="Insira sua senha"
 				/>
 				<View>
 					<RedirectLink
@@ -90,10 +84,19 @@ export default function Login() {
 					/>
 				</View>
 			</View>
-			<Text style={{ color: "#9c9c9cff" }}>
-				Não possui uma conta?{" "}
-				<Text style={{ color: "#5685EE" }}>Crie uma agora!</Text>
-			</Text>
+			<View style={style.boxBottom}>
+				<Button
+					text="Entrar"
+					loading={loading}
+					width={"100%"}
+					height={50}
+					onPress={handleLogin}
+				/>
+			</View>
+			<RedirectLink
+				text="Não possui uma conta? Cadastre-se!"
+				to="Register"
+			/>
 		</View>
 	);
 }

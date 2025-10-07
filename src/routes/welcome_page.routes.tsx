@@ -1,11 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import AuthLoading from "../pages/auth/AuthLoading";
 import WelcomePage from "../pages/welcome_page";
 import Login from "../pages/login/Login";
-import BottomRoutes from "./bottom.routes";
-import WecomePageRoutes from "./welcome_page.routes";
+import Register from "../pages/register/Register";
 
 const Stack = createStackNavigator();
 
@@ -16,20 +14,15 @@ const screenOptions = {
 	},
 };
 
-export default function Routes() {
+export default function WecomePageRoutes() {
 	return (
 		<Stack.Navigator
-			initialRouteName="AuthLoading"
+			initialRouteName="WelcomePage"
 			screenOptions={screenOptions}
 		>
 			<Stack.Screen
-				name="AuthLoading"
-				component={AuthLoading}
-				options={{ headerShown: false }}
-			/>
-			<Stack.Screen
-				name="WelcomePageRoutes"
-				component={WecomePageRoutes}
+				name="WelcomePage"
+				component={WelcomePage}
 				options={{ headerShown: false }}
 			/>
 			<Stack.Screen
@@ -46,9 +39,18 @@ export default function Routes() {
 				}}
 			/>
 			<Stack.Screen
-				name="BottomRoutes"
-				component={BottomRoutes}
-				options={{ headerShown: false }}
+				name="Register"
+				component={Register}
+				options={{
+					headerShown: true,
+					headerTitle: "Cadastro",
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: "transparent",
+						elevation: 0,
+						shadowOpacity: 0,
+					},
+				}}
 			/>
 		</Stack.Navigator>
 	);

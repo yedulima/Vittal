@@ -27,16 +27,15 @@ export default function WelcomePage() {
 				<Button
 					text="Login"
 					buttonColor="#38E07B"
-					textColor="#000"
 					width={310}
 					onPress={() => navigation.navigate("Login")}
 				/>
 				<Button
 					text="Cadastre-se"
 					buttonColor="#CFF3DE"
-					textColor="#000"
+					textColor="#696969ff"
 					width={310}
-					onPress={() => console.log("Hell World!")}
+					onPress={() => navigation.navigate("Register")}
 				/>
 			</View>
 			<View style={style.boxBottom}>

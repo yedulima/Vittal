@@ -18,7 +18,7 @@ export default function AuthLoading() {
 
 			navigation.reset({
 				index: 0,
-				routes: [{ name: "WelcomePage" }],
+				routes: [{ name: "WelcomePageRoutes" }],
 			});
 		});
 		return unsubscribe;

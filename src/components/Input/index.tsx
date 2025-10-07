@@ -54,7 +54,7 @@ export const Input = forwardRef((Props: Props, ref) => {
 		} else if (IconLeft || IconRight) {
 			return 10;
 		} else {
-			return 20;
+			return 15;
 		}
 	};
 
