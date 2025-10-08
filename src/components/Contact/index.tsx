@@ -33,7 +33,7 @@ export default function Contact({ name, status }: ContactProps) {
 								: status === "SOS"
 								? "#962929ff"
 								: "#f8b840ff",
-						borderWidth: 3,
+						borderWidth: 4,
 					}}
 				/>
 			</View>

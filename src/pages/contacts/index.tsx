@@ -21,6 +21,10 @@ export default function Contatcs() {
 			}}
 		>
 			<View style={style.searchBar}>
+				<TextInput
+					style={style.searchInput}
+					placeholder="Pesquisar contato"
+				/>
 				<MaterialIcons
 					name="search"
 					style={{
@@ -28,12 +32,8 @@ export default function Contatcs() {
 						color: "#7c7c7cff",
 					}}
 				/>
-				<TextInput
-					style={style.searchInput}
-					placeholder="Pesquisar contato"
-				/>
 			</View>
-			<View>
+			<View style={{ width: "100%" }}>
 				<Contact name={"Eduardo"} status={"Ativo"} />
 				<Contact name={"Levi"} status={"SOS"} />
 				<Contact name={"Júlio"} status={"Ativo"} />
@@ -41,7 +41,9 @@ export default function Contatcs() {
 				<Contact name={"Raphael"} status={"Ativo"} />
 				<Contact name={"Vitor"} status={"SOS"} />
 			</View>
-			<TouchableOpacity style={style.addButton}>
+			<TouchableOpacity
+				style={[style.addButton, { bottom: insets.bottom - 110 }]}
+			>
 				<MaterialIcons
 					name="add"
 					style={{ fontSize: 30, color: "#fff" }}

@@ -9,15 +9,6 @@ export const style = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#38E07B",
 		borderRadius: 10,
-		// shadowColor: "#000",
-		// shadowOffset: {
-		// 	width: 0,
-		// 	height: 8,
-		// },
-		// shadowOpacity: 0.44,
-		// shadowRadius: 10.32,
-
-		// elevation: 16,
 	},
 	textButton: {
 		color: "#fff",

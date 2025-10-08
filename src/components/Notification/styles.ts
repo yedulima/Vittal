@@ -12,6 +12,7 @@ export const style = StyleSheet.create({
 
 		margin: 5,
 		paddingHorizontal: 10,
+		paddingVertical: 15,
 
 		shadowColor: "#000",
 		shadowOffset: {
@@ -42,12 +43,12 @@ export const style = StyleSheet.create({
 		justifyContent: "center",
 	},
 	nameText: {
-		fontSize: 19,
+		fontSize: 16,
 		fontWeight: "bold",
 		color: "#494949ff",
 	},
 	descriptionText: {
-		fontSize: 15,
+		fontSize: 13,
 		fontWeight: "medium",
 		color: "#494949ff",
 	},

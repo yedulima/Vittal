@@ -16,17 +16,18 @@ export const style = StyleSheet.create({
 		backgroundColor: "transparent",
 		borderBottomColor: themes.colors.darkGray,
 		borderBottomWidth: 1,
+		gap: 7,
 	},
 	searchInput: {
 		flex: 1,
 		fontSize: 17,
+		color: "#7c7c7cff"
 	},
 	addButton: {
 		width: 65,
 		height: 65,
 		position: "absolute",
 		right: 0,
-		bottom: -15,
 		alignItems: "center",
 		justifyContent: "center",
 		borderRadius: 40,

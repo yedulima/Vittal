@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
 	tabArea: {
-		height: 100,
+		height: 70,
 		flexDirection: "row",
 		justifyContent: "space-around",
 		paddingHorizontal: 10,
-		paddingBottom: 30,
+		alignItems: "center",
 
 		shadowColor: "#000",
 		shadowOffset: {

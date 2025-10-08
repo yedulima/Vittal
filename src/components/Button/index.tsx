@@ -18,6 +18,8 @@ type Props = TouchableOpacityProps & {
 	loading?: boolean;
 	buttonColor?: string;
 	textColor?: string;
+	borderColor?: string;
+	borderWidth?: number;
 	width?: DimensionValue;
 	height?: DimensionValue;
 };
@@ -27,6 +29,8 @@ export function Button({
 	loading,
 	buttonColor,
 	textColor,
+	borderColor,
+	borderWidth,
 	width,
 	height,
 	...rest
@@ -34,6 +38,8 @@ export function Button({
 	const buttonStyles: StyleProp<ViewStyle> = [
 		style.button,
 		buttonColor && { backgroundColor: buttonColor },
+		borderColor && { borderColor: borderColor },
+		borderWidth != null && { borderWidth: borderWidth },
 		width != null && { width: width },
 		height != null && { height: height },
 	];

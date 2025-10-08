@@ -80,7 +80,7 @@ export default function Notification({
 					<Text
 						style={{
 							marginRight: 10,
-                            fontSize: 13,
+                            fontSize: 12,
 							fontWeight: "light",
 							color: "#777777ff",
 						}}

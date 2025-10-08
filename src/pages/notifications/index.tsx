@@ -19,7 +19,7 @@ export default function Notifications() {
 				gap: 15,
 			}}
 		>
-			<View>
+			<View style={{ width: "100%" }}>
 				<Notification
 					name="Alerta de SOS"
 					description="Maria apertou botão SOS"

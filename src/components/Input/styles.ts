@@ -24,6 +24,7 @@ export const style = StyleSheet.create({
 		width: "90%",
 		height: "100%",
 		borderRadius: 15,
+		color: "#7c7c7cff",
 	},
 	Icon: {
 		width: "100%",

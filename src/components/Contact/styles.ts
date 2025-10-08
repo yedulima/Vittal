@@ -40,7 +40,7 @@ export const style = StyleSheet.create({
 	},
 	statusText: {
 		fontSize: 15,
-		fontWeight: "light",
+		fontWeight: "medium",
 	},
 	boxRight: {
 		width: "10%",
