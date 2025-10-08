@@ -20,7 +20,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 					name="home"
 					style={{
 						fontSize: 25,
-						color: state.index === 0 ? "#38E07B" : "#000",
+						color: state.index === 0 ? "#38E07B" : "#888888ff",
 					}}
 				/>
 			</TouchableOpacity>
@@ -32,7 +32,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 					name="people"
 					style={{
 						fontSize: 25,
-						color: state.index === 1 ? "#38E07B" : "#000",
+						color: state.index === 1 ? "#38E07B" : "#888888ff",
 					}}
 				/>
 			</TouchableOpacity>
@@ -44,7 +44,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 					name="notifications-none"
 					style={{
 						fontSize: 30,
-						color: state.index === 2 ? "#38E07B" : "#000",
+						color: state.index === 2 ? "#38E07B" : "#888888ff",
 					}}
 				/>
 			</TouchableOpacity>
@@ -56,7 +56,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 					name="gear"
 					style={{
 						fontSize: 25,
-						color: state.index === 3 ? "#38E07B" : "#000",
+						color: state.index === 3 ? "#38E07B" : "#888888ff",
 					}}
 				/>
 			</TouchableOpacity>
